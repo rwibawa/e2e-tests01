@@ -5,12 +5,16 @@ const { SpecReporter } = require('jasmine-spec-reporter');
 
 exports.config = {
   seleniumAddress: 'http://localhost:4444/wd/hub',
-  seleniumArgs: ['-Dwebdriver.ie.driver=node_modules\protractor\node_modules\webdriver-manager\selenium\MicrosoftWebDriver.exe'],
-
   allScriptsTimeout: 240000,
   specs: [
     './e2e/**/*.e2e-spec.ts'
   ],
+
+  // seleniumArgs: ['-Dwebdriver.ie.driver=node_modules\protractor\node_modules\webdriver-manager\selenium\MicrosoftWebDriver.exe'],
+  // capabilities: {
+  //   'browserName': 'MicrosoftEdge', 
+  //   // javascriptEnabled=true,
+  // },
 
   // capabilities: {
   //   'browserName': 'MicrosoftEdge',
@@ -63,6 +67,8 @@ exports.config = {
     'browserName': 'internet explorer',
     'platform': 'ANY',
     'version': '11',
+  },{
+    'browserName': 'MicrosoftEdge', 
   },
   ],
 
@@ -77,7 +83,7 @@ exports.config = {
 
   // directConnect: true,
   // getPageTimeout: 240000,
-  baseUrl: 'http://localhost:8091/',
+  baseUrl: 'http://localhost:8091/', //'https://plslaptop-02742/login.jsp',
   framework: 'jasmine',
   jasmineNodeOpts: {
     showColors: true,
